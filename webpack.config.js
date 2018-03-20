@@ -2,18 +2,23 @@ const path = require("path");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
 const webpack = require("webpack");
-
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: {
-    app: "./src/main.jsx"
+    app: "./src/main.js"
   },
-  devtool: "inline-source-map",
   output: {
     path: path.join(__dirname, "www"),
     filename: "bundle.js",
   },
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        use: ["babel-loader"],
+        include: [path.resolve(__dirname, "src")]
+      },
       {
         test: /\.jsx$/,
         use: ["babel-loader"],
@@ -32,7 +37,7 @@ module.exports = {
             loader: "sass-loader"
           }
         ],
-        include: [path.resolve(__dirname, "www")]
+        include: [path.resolve(__dirname, "src")]
       },
       {
         test: /\.(gif|png|jpg|svg)$/i,
@@ -67,17 +72,20 @@ module.exports = {
     ]
   },
   devServer: {
-    contentBase: path.join(__dirname, "src")
+    contentBase: path.join(__dirname, "www")
   },
   resolve: {
     extensions: [".js", ".jsx", ".scss"]
   },
   plugins: [
     new CleanWebpackPlugin(["www"]),
+    new UglifyJsPlugin(
+      { sourceMap: true }
+    ),
     new webpack.DefinePlugin({
       // <-- key to reducing React's size
       "process.env": {
-        NODE_ENV: JSON.stringify("production")
+        NODE_ENV: JSON.stringify("development")
       }
     }),
     new CompressionPlugin({
@@ -86,6 +94,9 @@ module.exports = {
       test: /\.jsx$|\.css$|\.html$|\.jpg$|\.png$|\.js$/,
       threshold: 10240,
       minRatio: 0.8
+    }),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, "src/index.html")
     })
   ]
 };
