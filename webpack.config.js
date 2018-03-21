@@ -13,8 +13,7 @@ module.exports = {
     filename: "bundle.js",
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.js$/,
         use: ["babel-loader"],
         include: [path.resolve(__dirname, "src")]
@@ -26,8 +25,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: [
-          {
+        use: [{
             loader: "style-loader"
           },
           {
@@ -79,9 +77,9 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(["www"]),
-    new UglifyJsPlugin(
-      { sourceMap: true }
-    ),
+    new UglifyJsPlugin({
+      sourceMap: true
+    }),
     new webpack.DefinePlugin({
       // <-- key to reducing React's size
       "process.env": {
