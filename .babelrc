@@ -1,6 +1,12 @@
 {
-    "presets": [
-      ["env", { "modules": false }],
-      "react"
-    ]
-  }
+  "presets": [
+      [
+       "es2015",
+       {
+          "modules": false
+       }
+      ],
+      "react",
+      "stage-0"
+  ]
+}

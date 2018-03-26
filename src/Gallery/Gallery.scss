@@ -1,0 +1,31 @@
+.thumbNailType1,
+.thumbNailType2 {
+    margin-bottom: 3%;
+    p {
+        font-family: 'Muli', sans-serif !important;
+        font-size: 15px;
+    }
+    .thumbnail {
+        background-color: rgba(191, 38, 38, 0.85);
+        padding: 0px !important;
+        .caption {
+            color: floralwhite;
+        }
+    }
+}
+
+.gallery-list {
+    z-index: 1;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: justify;
+    li {
+        list-style-type: none;
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}

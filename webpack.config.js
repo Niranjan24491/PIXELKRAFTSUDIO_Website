@@ -12,6 +12,7 @@ module.exports = {
     path: path.join(__dirname, "www"),
     filename: "bundle.js",
   },
+  devtool: 'eval',
   module: {
     rules: [{
         test: /\.js$/,
@@ -46,7 +47,7 @@ module.exports = {
             options: {
               mozjpeg: {
                 progressive: true,
-                quality: 50
+                quality: 100
               },
               // optipng.enabled: false will disable optipng
               optipng: {
@@ -61,7 +62,7 @@ module.exports = {
               },
               // the webp option will enable WEBP
               webp: {
-                quality: 50
+                quality: 100
               }
             }
           }
