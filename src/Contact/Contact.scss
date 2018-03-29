@@ -1,19 +1,22 @@
-.contact-details {
-    background-color: rgba(150,154,156, 0.6);
-    padding-top: 0%;
-    margin-top: 4%;
-    padding-bottom: 1%;
-    border-radius: 14px;
-
-    h3, h5, h6 {
-        color: floralwhite;
-    }
-}
-
 .contact-info {
     .jumbotron {
         background-color: rgba(234, 234, 234, 0.7);
         border-radius: 0% !important;
         margin-top: 3%;
+        width: 100%;
+        padding-top: 1%;
+        text-align: center;
     }
+}
+
+.profile-image {
+    width: 80%;
+}
+
+.margin-class {
+    margin-top: 3%;
+}
+
+.description-field {
+    min-height: 70px;
 }

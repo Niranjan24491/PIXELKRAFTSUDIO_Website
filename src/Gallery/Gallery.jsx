@@ -1,132 +1,48 @@
-// import React, { Component } from "react";
-// import { render } from "react-dom";
-// import { Thumbnail, Row, Col, Image } from 'react-bootstrap';
-// import PreWedding from '../../images/coming-soon.jpg';
-// import wedding from '../../images/background.jpg';
-// import './Gallery.scss';
-// // import MultiGroup from '../MultiScroll/MultiScroll.js';
-// import Header from '../Header/Header.jsx';
+import React, {Component} from "react";
+import {render} from "react-dom";
+import p1 from '../../images/portfolio/p1.jpg';
+import p2 from '../../images/portfolio/p2.jpg';
+import p3 from '../../images/portfolio/p3.png';
+import p4 from '../../images/portfolio/p4.jpg';
+import p5 from '../../images/portfolio/p5.jpg';
+import p6 from '../../images/portfolio/p6.jpg';
+import p7 from '../../images/portfolio/p7.jpg';
+import p8 from '../../images/portfolio/p8.jpg';
+import p9 from '../../images/portfolio/p9.jpg';
+import {Image, Row, Col} from 'react-bootstrap';
+import './Gallery.scss';
 
-// const LOREMText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+const LOREMText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i" +
+        "ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostru" +
+        "d exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aut" +
+        "e irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat n" +
+        "ulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui" +
+        " officia deserunt mollit anim id est laborum.";
 
-// export default class Gallery extends Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//             contentType: 'preWedding'
-//         };
-//     }
-//     renderThumbnailType1(name, description) {
-//         return (
-//             <Row className="thumbNailType1">
-//                 <Col lg={3} md={6} sm={3} xs={12} lgOffset={1}>
-//                     <Thumbnail src={PreWedding} alt="242x200">
-//                         <h3>{name}</h3>
-//                     </Thumbnail>
-//                 </Col>
-//                 <Col lg={6} md={6} sm={9} xs={12} lgPull={1} lgOffset={2}>
-//                     <p>{description}</p>
-//                 </Col>
-//             </Row>
-//         );
-//     }
-//     renderThumbnailType2(name, description) {
-//         return (
-//             <Row className="thumbNailType2">
-//                 <Col lg={6} md={6} sm={9} xs={12} lgOffset={1}>
-//                     <p>{description}</p>
-//                 </Col>
-//                 <Col lg={3} md={6} sm={3} xs={12} lgPull={1} lgOffset={2}>
-//                     <Thumbnail src={PreWedding} alt="242x200">
-//                         <h3>{name}</h3>
-//                     </Thumbnail>
-//                 </Col>
-//             </Row>
-//         );
-//     }
+export default class Gallery extends Component {
 
-//     onlistClick(type) {
-//         this.setState({
-//             contentType: type
-//         });
-//     }
-//     render() {
-//         return (
-//             <div>
-//                 {this.renderThumbnailType1('Pre wedding Shoot', LOREMText)}
-//                 {this.renderThumbnailType2('Wedding Shoot', LOREMText)}
-//                 {this.renderThumbnailType1('Post Wedding Shoot', LOREMText)}
-//                 {this.renderThumbnailType2('Model Shoot', LOREMText)}
-//                 {this.renderThumbnailType1('Baby Shower Shoot', LOREMText)}
-//                 {this.renderThumbnailType2('Casual Shoot', LOREMText)}
-//             </div>
-//             // <div>
-//             //     {/* <Header /> */}
-//             //     <div className="gallery-list">
-//             //         <ul>
-//             //             <li onClick={(e) => this.onlistClick('preWedding')}>Pre Wedding</li>
-//             //             <li onClick={(e) => this.onlistClick('wedding')}>Wedding</li>
-//             //             <li onClick={(e) => this.onlistClick('postWedding')}>Post Wedding</li>
-//             //             <li onClick={(e) => this.onlistClick('models')}>Models</li>
-//             //             <li onClick={(e) => this.onlistClick('babyShower')}>Baby Shower</li>
-//             //             <li onClick={(e) => this.onlistClick('candid')}>Candid Pics</li>
-//             //         </ul>
-//             //     </div>
-//             //     {this.state.contentType === 'preWedding' && (<MultiGroup >
-//             //         <multiScroll>
-//             //             <leftSide>
-//             //                 <Image src={wedding} responsive />
-//             //         </leftSide>
-//             //             <rightSide>
-//             //                 page1: Content Right here
-//             //         </rightSide>
-//             //         </multiScroll>
-//             //         <multiScroll>
-//             //             <leftSide>
-//             //                 Page2: Content Left here
-//             //         </leftSide>
-//             //             <rightSide>
-//             //                 Page2: Content Right here
-//             //         </rightSide>
-//             //         </multiScroll>
-//             //         <multiScroll>
-//             //             <leftSide>
-//             //                 Page3: Content Left here
-//             //         </leftSide>
-//             //             <rightSide>
-//             //                 Page3: Content Right here
-//             //         </rightSide>
-//             //         </multiScroll>
-//             //     </MultiGroup>
-//             //     )}
-//             //     {this.state.contentType === 'wedding' && (<MultiGroup >
-//             //         <multiScroll>
-//             //             <leftSide>
-//             //                 Page1:wedding
-//             //         </leftSide>
-//             //             <rightSide>
-//             //                 page1: Content Right here
-//             //         </rightSide>
-//             //         </multiScroll>
-//             //         <multiScroll>
-//             //             <leftSide>
-//             //                 Page2: Content Left here
-//             //         </leftSide>
-//             //             <rightSide>
-//             //                 Page2: Content Right here
-//             //         </rightSide>
-//             //         </multiScroll>
-//             //         <multiScroll>
-//             //             <leftSide>
-//             //                 Page3: Content Left here
-//             //         </leftSide>
-//             //             <rightSide>
-//             //                 Page3: Content Right here
-//             //         </rightSide>
-//             //         </multiScroll>
-//             //     </MultiGroup>
-//             //     )}
-//             // </div>
-//         )
-//     }
-// }
+    renderImageTiles = (image) => {
+        return (
+            <Col lg={4} md={4} xs={12} className="zero-padding containers">
+                <div class="item">
+                    <Image src={image} responsive/>
+                </div>
+            </Col>
+        )
+    }
+    render() {
+        return (
+            <Row className="gallery-container">   
+                {this.renderImageTiles(p1)}
+                {this.renderImageTiles(p2)}
+                {this.renderImageTiles(p3)}
+                {this.renderImageTiles(p4)}
+                {this.renderImageTiles(p5)}
+                {this.renderImageTiles(p6)}
+                {this.renderImageTiles(p7)}
+                {this.renderImageTiles(p8)}
+                {this.renderImageTiles(p9)}
+            </Row>
+        )
+    }
+}

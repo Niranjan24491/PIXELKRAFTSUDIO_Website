@@ -7,8 +7,8 @@ export default class Header extends Component {
     render() {
         return (
             <div>
-                <div className={`${this.props.headerClass}-parent`}>
-                    <div className="header-left">
+                <div className={`${this.props.headerClass}`}>
+                    <div className="header-left" onClick={(e) => this.props.navigationClick(e, 'logo')}>
                         PIXEL KRAFT STUDIO
                     </div>
                     <div className="header-right">

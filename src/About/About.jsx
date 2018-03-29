@@ -13,7 +13,7 @@ export default class About extends Component {
                     <Col lg={5} md={5} xs={12}>
 
                     </Col>
-                    <Col lg={7} md={7} xs={12} className="about-info">
+                    <Col lg={6} md={6} xs={12} className="about-info">
                         <p>{LOREMText}</p>
                         <p>{LOREMText}</p>
                         <p>{LOREMText}</p>
